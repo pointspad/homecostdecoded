@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok authorisation</title>
+<style>
+body{font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;max-width:44rem;
+margin:3rem auto;padding:0 1.25rem;color:#16202e}
+h1{font-size:1.4rem}
+#code{font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+background:#0f1729;color:#e8edf7;padding:1rem;border-radius:8px;
+word-break:break-all;user-select:all}
+button{font:inherit;padding:.6rem 1.1rem;border:0;border-radius:8px;
+background:#1a56b8;color:#fff;cursor:pointer;margin-top:1rem}
+.err{color:#b3261e}
+</style></head><body>
+<h1>TikTok authorisation</h1>
+<p id="msg">Reading the authorisation code…</p>
+<div id="code"></div>
+<button id="copy" hidden>Copy code</button>
+<p id="hint" hidden>Paste this back into the terminal, then close this tab.</p>
+<script>
+const q = new URLSearchParams(location.search);
+const code = q.get("code"), err = q.get("error");
+const el = document.getElementById("code"), msg = document.getElementById("msg");
+if (code) {
+  msg.textContent = "Authorisation code:";
+  el.textContent = code;
+  const b = document.getElementById("copy");
+  b.hidden = false;
+  document.getElementById("hint").hidden = false;
+  b.onclick = () => navigator.clipboard.writeText(code)
+    .then(() => b.textContent = "Copied");
+} else {
+  msg.className = "err";
+  msg.textContent = err
+    ? ("TikTok returned an error: " + err + " " + (q.get("error_description")||""))
+    : "No code in the URL. Start the authorisation again from the terminal.";
+}
+</script>
+</body></html>
