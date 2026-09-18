@@ -1,18 +1,135 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Home Cost Decoded</title>
-<style>body{font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;
-max-width:44rem;margin:3rem auto;padding:0 1.25rem;color:#16202e}
-h1{font-size:1.6rem}a{color:#1a56b8}</style></head><body>
-<h1>Home Cost Decoded</h1>
-<p>Where the money in home quotes actually goes — explainers on homeowner
-bills, contractor quotes, insurance and fees.</p>
-<p><a href="https://www.youtube.com/@homecostdecoded">YouTube</a> ·
-<a href="https://www.tiktok.com/@homecostdecoded">TikTok</a></p>
-<h2>HomeCostDecoded Poster</h2>
-<p>A private, single-user tool used to upload our own videos to our own
-social accounts as drafts.</p>
-<p><a href="terms.html">Terms of Service</a> ·
-<a href="privacy.html">Privacy Policy</a></p>
-</body></html>
+<meta name="description" content="Where the money in home quotes actually goes. Short breakdowns of what homeowners are charged and why.">
+<style>
+:root{
+  --bg:#fbfaf8; --card:#fff; --ink:#15202b; --muted:#5d6b7a;
+  --line:#e6e1d9; --accent:#8c3b23; --accent-ink:#fff;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#14181d; --card:#1c2228; --ink:#e9edf1; --muted:#9aa7b4;
+         --line:#2b333b; --accent:#d98b6f; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+  "Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.15rem}
+/* On a phone the single column IS the page. On a laptop a 46rem column
+   leaves most of the window empty, so widen the measure and run the
+   categories two-up. Each section is one grid item, so a category never
+   splits across columns mid-list. */
+/* COLUMNS, NOT GRID. A 2-col grid aligns rows to the tallest section,
+   so a short category (Roofing, 3 items) leaves a hole beneath it
+   until the next row starts. Multi-column packs sections continuously;
+   break-inside keeps a category from splitting across the fold. */
+@media (min-width:56rem){
+  .wrap{max-width:62rem}
+  .cols{column-count:2;column-gap:1.7rem}
+  .cols section{break-inside:avoid;-webkit-column-break-inside:avoid;
+    display:block}
+}
+header{padding:2.6rem 0 1.4rem}
+h1{margin:0 0 .35rem;font-size:1.75rem;letter-spacing:-.015em}
+.tag{margin:0;color:var(--muted);font-size:1.02rem}
+.intro{margin:1.5rem 0 0;padding:1rem 1.1rem;background:var(--card);
+  border:1px solid var(--line);border-radius:12px}
+.intro p{margin:0;font-size:.97rem}
+/* Spacing lives on the SECTION, not on a heading margin. A heading
+   margin-top is collapsed away at the top of a new column, so the two
+   columns started ~20px out of alignment with each other. */
+.cols{margin-top:2.2rem}
+.cols section{margin-bottom:2rem}
+h2{margin:0 0 .7rem;font-size:.82rem;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--muted);font-weight:700}
+ul{list-style:none;margin:0;padding:0;border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;background:var(--card)}
+li+li{border-top:1px solid var(--line)}
+/* BLOCK FLOW, NOT FLEX. Some cost cards carry words as well as figures
+   ("$3,200 furnace → $7,800 quote"). Side by side, that item cannot
+   compress, so it widened the whole document and clipped EVERY element
+   off the right edge - not just its own row. Two flex attempts failed
+   the same way, because a flex title shrinks rather than wrapping.
+   Stacked block children cannot overflow at any viewport, and on a
+   phone - which is where all of this traffic arrives - the figure
+   reads better as a label above the question anyway. */
+a.ep{display:block;padding:.8rem 1rem;text-decoration:none;color:inherit}
+a.ep:hover,a.ep:focus{background:rgba(140,59,35,.06);outline:none}
+.fig{display:block;font-variant-numeric:tabular-nums;font-weight:700;
+  font-size:.79rem;letter-spacing:.02em;color:var(--accent);
+  margin-bottom:.1rem;overflow-wrap:anywhere}
+.ttl{display:block;font-size:.97rem;overflow-wrap:anywhere}
+footer{margin:3rem 0 2.5rem;padding-top:1.4rem;
+  border-top:1px solid var(--line);color:var(--muted);font-size:.87rem}
+footer a{color:var(--accent)}
+.note{margin:.9rem 0 0;font-size:.82rem;line-height:1.55}
+@media (max-width:26rem){ .fig{font-size:.8rem} }
+</style></head><body><div class="wrap">
+<header><h1>Home Cost Decoded</h1>
+<p class="tag">Where the money in a home quote actually goes.</p>
+</header>
+<div class="intro"><p>Every video takes one real homeowner expense and shows what sits inside the number — labour, materials, access, overhead, and the line items nobody reads out loud. Find the job you are being quoted for.</p></div>
+<div class="cols">
+<section><h2>Roofing</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/jW4GmfeEyC8" rel="noopener"><span class="fig">$9,000 → $13,100</span><span class="ttl">Why Roof Quotes Can Jump From $9k to $13k: The Cost Breakdown</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/RJc2CLYQaf0" rel="noopener"><span class="fig">$70 → $100</span><span class="ttl">Why a Decking Clause Can Add Thousands to a Roofing Quote</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/MxmEAgEgE8A" rel="noopener"><span class="fig">$9,400 → $6,800</span><span class="ttl">Two Roofers, Two Quotes: $9,400 vs. $6,800 – Why the Gap Exists</span></a></li>
+</ul></section>
+<section><h2>Heating &amp; cooling</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/UX1jalaIey0" rel="noopener"><span class="fig">$1,200 → $6,000</span><span class="ttl">Mini Split Unit: $1,200. Installed Quote: $6,000. Here’s Why</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/wdVbdkWCozE" rel="noopener"><span class="fig">$3,200 furnace → $7,800 quote</span><span class="ttl">Furnace Quotes: Why $3,200 Becomes $7,800 — Where the Money Goes</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/4QQoDJTvbck" rel="noopener"><span class="ttl">Why $89 Furnace Tune‑Up Doesn&#x27;t Include Repairs In Autumn</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/xYncfhicOQI" rel="noopener"><span class="fig">$99 → $350</span><span class="ttl">$99 HVAC Tune-Up Cost: Where the Real Money Actually Goes</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/orL5iN8ds5c" rel="noopener"><span class="fig">$65 → $380</span><span class="ttl">Why HVAC Repair Bills Grow Beyond the Part Cost</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/watch?v=4kUUgT7gLHo" rel="noopener"><span class="fig">$600 → $1,800</span><span class="ttl">Why a Water Heater That Costs $600 Can Show Up as an $1,800 Invoice</span></a></li>
+</ul></section>
+<section><h2>Plumbing</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/wtJQGgZhabw" rel="noopener"><span class="fig">$600 → $4,000+</span><span class="ttl">Slab Leak Repair Cost: A $600 Fix That Can Balloon Past $4,000</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/PNGiz7yQkXs" rel="noopener"><span class="fig">$4,000 → $11,000</span><span class="ttl">Sewer Line Replacement Cost: What the Street Adds to the Bill</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/2bCr7Sw5Hs8" rel="noopener"><span class="fig">$4,000 → $8,000</span><span class="ttl">A $4,000 Repipe Quote — What&#x27;s Actually Inside That Number?</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/l0SPePjkfVU" rel="noopener"><span class="fig">$1,200 → $7,000</span><span class="ttl">Basement Drain Repair Cost: What Adds Thousands To The Bill</span></a></li>
+</ul></section>
+<section><h2>Electrical &amp; energy</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/dogmjaCQp84" rel="noopener"><span class="fig">$3,000 → $7,500</span><span class="ttl">200 Amp Service Cost: Why the Panel Is the Cheap Part</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/ArV1o09893Q" rel="noopener"><span class="fig">$600 → $1,800</span><span class="ttl">EV Charger Installation Cost: How $600 Can Become $1,800</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/Q800dez-pUY" rel="noopener"><span class="fig">$120 → $190</span><span class="ttl">Why Using Less Electricity Can Sometime Cost You More</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/e2f3QgD0Zck" rel="noopener"><span class="fig">$20 → $1,200</span><span class="ttl">Recessed Lighting Installation Cost: Why Each Can Can Run $150+</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/watch?v=px5FkizagaE" rel="noopener"><span class="fig">$9,000 → $28,000</span><span class="ttl">Home Solar Installation Cost: Where Does $28,000 Actually Go?</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/vSKQhNwe9CQ" rel="noopener"><span class="fig">$100 → $1,800</span><span class="ttl">The Distance Gap: Why Subpanel Installation Cost Jumps</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/TOE2LaJ_J2Y" rel="noopener"><span class="fig">$500 → $3,500</span><span class="ttl">Why a $500 EV charger install can lead to a $3,500 quote</span></a></li>
+</ul></section>
+<section><h2>Outside the house</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/_uSsNEwwZsE" rel="noopener"><span class="fig">$900 → $1,800</span><span class="ttl">Why a Backyard Tree Can Cost Twice Your Front-Yard Quote</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/sGSchuJpBvs" rel="noopener"><span class="fig">$6/bag → $9,000</span><span class="ttl">$6 Bag vs $9,000 Driveway Quote: Where the Money Goes</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/qsOU0vDY-BA" rel="noopener"><span class="ttl">Why Two Chimney Quotes Differ So Much – $90 vs $900</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/AzBkvOFIexA" rel="noopener"><span class="fig">$300 → $1,200</span><span class="ttl">Why Replacement Window Cost Can Jump From $300 to $1,200</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/MQO4Q7L9f3E" rel="noopener"><span class="ttl">Why Gutter Quotes Can Differ by $300: Understanding the Hidden Factors</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/watch?v=FhXNI4lbMJ0" rel="noopener"><span class="fig">$600 → $2,500</span><span class="ttl">How a $600 Tree Drop Becomes a $2,500 Removal Bill</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/0MtmP7VybKw" rel="noopener"><span class="ttl">Per‑Visit vs Seasonal Snow Removal: Why Costs Vary for Homeowners</span></a></li>
+</ul></section>
+<section><h2>Inside the house</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/Jd3h5-xkwlY" rel="noopener"><span class="fig">$250 → $4,000</span><span class="ttl">Cabinet Painting Cost: $250 in Paint, $4,000 Quote. Where Does It Go?</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/IgzlXYwd89o" rel="noopener"><span class="fig">$3,200 → $400</span><span class="ttl">Why Water‑Damage Restoration Bills So Much More Than Equipment Rentals</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/KV6Yl_5BrBg" rel="noopener"><span class="fig">$500 → $1,400</span><span class="ttl">Why a Drywall Quote Can Suddenly Grow to $1,400</span></a></li>
+</ul></section>
+<section><h2>Bills, quotes &amp; fees</h2><ul>
+<li><a class="ep" href="https://www.youtube.com/shorts/TQJCESruVmM" rel="noopener"><span class="fig">$3,200 → $4,100</span><span class="ttl">Estimate Was $3,200 — Final Invoice Says $4,100. Here&#x27;s Why.</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/951IM_dW8jo" rel="noopener"><span class="fig">$6,000 → $10,500</span><span class="ttl">Why Contractor Quotes Use Three Tiers — What the Jump Buys</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/pUXWQaGC4VI" rel="noopener"><span class="fig">$14,000 → $2,000</span><span class="ttl">Decoding Contractor Deposits: How Payment Triggers Shift Risk</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/3fnM8OCJkHk" rel="noopener"><span class="fig">$450 → $850</span><span class="ttl">How a $450 Dumpster Quote Can Become $850 After Pickup</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/VBOJWK4q684" rel="noopener"><span class="fig">$32 → $68</span><span class="ttl">Fixed Charges: Why a $32 Energy Line Becomes a $68 Bill</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/vPcNWMhfLww" rel="noopener"><span class="fig">$50 → $600</span><span class="ttl">Why the Gap Between a Small Box and a Home Quote Exists</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/watch?v=8R9TAxaW9Q4" rel="noopener"><span class="fig">$250 → $1,500</span><span class="ttl">Why Building Permits Quietly Inflate Quotes</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/7U5RLZn1XRY" rel="noopener"><span class="fig">$2,500 → $15,000</span><span class="ttl">Why a Storm&#x27;s Name Can Turn a $2,500 Deductible Into $15,000 Out of Pocket</span></a></li>
+<li><a class="ep" href="https://www.youtube.com/shorts/mhBy9iqhWNU" rel="noopener"><span class="fig">$40 → $95</span><span class="ttl">Why a whole-house water filter can spike your bill</span></a></li>
+</ul></section>
+</div>
+<footer>
+<p><a href="https://www.youtube.com/@homecostdecoded">YouTube</a> · <a href="https://www.tiktok.com/@homecostdecoded">TikTok</a></p>
+<p class="note">General information about how pricing typically works — not financial or professional advice. Figures are illustrative examples; actual costs vary by location, provider and job.</p>
+<p class="note">Narration and imagery in these videos are AI-generated.</p>
+<p class="note"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></p>
+<p class="note">Updated 17 September 2026.</p>
+</footer></div></body></html>
